@@ -1,4 +1,24 @@
 class RidesController < ApplicationController
+  def home
+    render
+  end
+
+  def show
+    @ride = params[:id]
+  end
+
+  def index
+
+  end
+
+  def new
+    render text: 'this is the new form'
+  end
+
+  def create
+    redirect_to rides_path
+  end
+
   def about
     render text: "Welcome to Ipsum's Fair! Come for our rides, stay for our hotdogs"
   end
@@ -7,5 +27,9 @@ class RidesController < ApplicationController
   end
   def ipsum_ride
     render text: "Ipsum Lorem motherfucker!!"
+  end
+
+  def destory
+    redirect_to rides_path
   end
 end
